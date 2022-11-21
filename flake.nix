@@ -22,7 +22,23 @@
         ];
 
         shellHook = ''
+          # export PGDATA="$PWD/db"
+          ####################################################################
+          # Create a diretory for the generated artifacts
+          ####################################################################
+          mkdir -p .nix-shell
+          export NIX_SHELL_DIR=$PWD/.nix-shell
+          ####################################################################
+          # Put the PostgreSQL databases in the project diretory.
+          ####################################################################
+          export PGDATA=$NIX_SHELL_DIR/db
+          ####################################################################
+          # Put any Mix-related data in the project directory
+          ####################################################################
+          export MIX_HOME="$NIX_SHELL_DIR/.mix"
+          export MIX_ARCHIVES="$MIX_HOME/archives"
           export PGDATA="$PWD/db"
+          export ERL_AFLAGS="-kernel shell_history enabled"
         '';
       };
     };

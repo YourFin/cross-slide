@@ -2,8 +2,8 @@ import Config
 
 # Configure your database
 config :cross_slide, CrossSlide.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "pen",
+  password: "",
   hostname: "localhost",
   database: "cross_slide_dev",
   stacktrace: true,

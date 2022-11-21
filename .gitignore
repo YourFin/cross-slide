@@ -33,3 +33,7 @@ npm-debug.log
 /assets/node_modules/
 
 /.direnv/
+
+/.elixir_ls/
+/.nix-shell/
+/db/
