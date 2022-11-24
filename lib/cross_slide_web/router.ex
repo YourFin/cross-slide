@@ -8,6 +8,7 @@ defmodule CrossSlideWeb.Router do
     plug :put_root_layout, {CrossSlideWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug CrossSlideWeb.Plugs.Locale, "en"
   end
 
   pipeline :api do
